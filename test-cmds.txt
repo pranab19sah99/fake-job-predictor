@@ -1,0 +1,127 @@
+1. REAL — Software Engineer
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Software Engineer",
+  "description": "We are hiring a Software Engineer to build microservices using Python and FastAPI. Responsibilities include designing APIs, writing unit tests, and participating in code reviews.",
+  "requirements": "3+ years experience in backend development, Python, SQL, Docker.",
+  "company_profile": "TechNova Solutions is a mid-sized IT company based in Bangalore.",
+  "benefits": "Health insurance, PF, remote flexibility.",
+  "telecommuting": 0,
+  "has_company_logo": 1,
+  "has_questions": 1
+}'
+
+
+2. REAL — Data Analyst
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Data Analyst",
+  "description": "The Data Analytics team at BrightWorks is seeking a Data Analyst to create dashboards, analyze customer trends, and prepare weekly reports.",
+  "requirements": "Experience with SQL, Excel, PowerBI or Tableau.",
+  "company_profile": "BrightWorks Retail Analytics is a registered firm working with 300+ retail partners.",
+  "benefits": "Work from office, annual bonus, paid leaves.",
+  "telecommuting": 0,
+  "has_company_logo": 1,
+  "has_questions": 0
+}'
+
+3. REAL — HR Coordinator
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "HR Coordinator",
+  "description": "We are looking for an HR Coordinator to manage onboarding, handle employee queries, and assist with recruitment.",
+  "requirements": "Excellent communication, basic HRMS knowledge.",
+  "company_profile": "Zenith Financial Services is a licensed NBFC with 15 years of operation.",
+  "benefits": "Medical coverage, performance bonus.",
+  "telecommuting": 0,
+  "has_company_logo": 1,
+  "has_questions": 1
+}'
+
+4. FAKE — Work From Home Data Entry Scam
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Work From Home Data Entry Job",
+  "description": "Earn 50,000 INR per week just typing simple forms! No experience required. Limited seats. Immediate joining.",
+  "requirements": "Must pay registration fee of 999 INR before training.",
+  "company_profile": "",
+  "benefits": "Daily payouts.",
+  "telecommuting": 1,
+  "has_company_logo": 0,
+  "has_questions": 0
+}'
+
+5. FAKE — Suspicious Executive Assistant Job
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Executive Assistant to CEO",
+  "description": "International company seeks assistant urgently. Send your passport photo, bank details, and Aadhaar for verification. High salary for minimal work.",
+  "requirements": "Must share government ID immediately.",
+  "company_profile": "",
+  "benefits": "",
+  "telecommuting": 1,
+  "has_company_logo": 0,
+  "has_questions": 0
+}'
+
+
+6. FAKE — Product Review / Affiliate Scam
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Product Reviewer - Earn 10,000 per task",
+  "description": "Complete easy app reviews and earn up to 10,000 INR per task. First task bonus 5,000 INR. Activation fee of 500 INR required.",
+  "requirements": "",
+  "company_profile": "Fast rewards program. WhatsApp only.",
+  "benefits": "Daily income guarantee.",
+  "telecommuting": 1,
+  "has_company_logo": 0,
+  "has_questions": 0
+}'
+
+7. Senior Backend Engineer
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Senior Backend Engineer",
+  "company_profile": "Veritas Digital Systems is a Bangalore-based SaaS company with 120 engineers, building workflow automation platforms for healthcare, logistics, and retail. Backed by Accel and Blume Ventures, our flagship product powers 300+ clients globally.",
+  "description": "We are seeking a Senior Backend Engineer to design, implement, and optimize scalable distributed systems. You will collaborate with product managers, frontend engineers, and DevOps to develop APIs, microservices, and backend features that handle millions of requests per day. Participate in architecture reviews, code reviews, and help mentor junior engineers.",
+  "requirements": "4-8 years of backend experience; expertise in Python, Django, REST, SQL/NoSQL; experience with Docker, Kubernetes, cloud platforms (AWS/GCP); strong debugging and problem-solving skills.",
+  "benefits": "Competitive salary, health insurance, flexible work hours, annual learning budget, stock options.",
+  "telecommuting": 1,
+  "has_company_logo": 1,
+  "has_questions": 0
+}'
+
+8. Marketing Manager – Digital Campaigns
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Marketing Manager - Digital Campaigns",
+  "company_profile": "UrbanNest Interiors is a mid-sized interior design and home renovation company operating in five metro cities. We deliver modern designs, turnkey solutions, and full project management for residential clients.",
+  "description": "We are hiring a Marketing Manager to lead digital campaigns across Google Ads, Meta Ads, SEO, and influencer partnerships. Responsibilities include campaign planning, execution, tracking KPIs, reporting ROI, collaborating with creative teams, and optimizing lead generation funnels.",
+  "requirements": "3-6 years of digital marketing experience; hands-on experience with analytics dashboards; expertise in SEO/SEM, paid ads, and social media campaigns; strong communication and analytical skills.",
+  "benefits": "Hybrid work options, performance incentives, mobile allowance, professional development opportunities.",
+  "telecommuting": 1,
+  "has_company_logo": 1,
+  "has_questions": 0
+}'
+
+9. Remote Data Entry Specialist (Fake Job Example)
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{
+  "title": "Remote Data Entry Specialist",
+  "company_profile": "SkyBridge Global Solutions claims to provide outsourced operations services remotely. No verifiable address or leadership information is available on their website.",
+  "description": "We are hiring multiple remote data entry specialists. You will enter invoices, update spreadsheets, send emails, and perform administrative tasks. No prior experience required. Weekly payouts directly to your bank account.",
+  "requirements": "Basic typing skills, attention to detail, ability to work independently, willingness to use WhatsApp or Telegram for daily assignments.",
+  "benefits": "Flexible hours, work-from-home opportunity, immediate onboarding training, performance bonuses.",
+  "telecommuting": 1,
+  "has_company_logo": 0,
+  "has_questions": 0
+}'
