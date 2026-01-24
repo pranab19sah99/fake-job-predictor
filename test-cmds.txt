@@ -84,7 +84,7 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   "has_questions": 0
 }'
 
-7. Senior Backend Engineer
+7. Senior Backend Engineer - Real
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "Content-Type: application/json" \
 -d '{
@@ -98,7 +98,7 @@ curl -X POST "http://127.0.0.1:8000/predict" \
   "has_questions": 0
 }'
 
-8. Marketing Manager – Digital Campaigns
+8. Marketing Manager – Digital Campaigns - Real
 curl -X POST "http://127.0.0.1:8000/predict" \
 -H "Content-Type: application/json" \
 -d '{

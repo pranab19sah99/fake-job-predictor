@@ -61,28 +61,28 @@ def predict(job: JobPostRequest):
         "text_length": text_length
     }])
 
-    ml_prob = ml_model.predict_proba(input_df)[0][1]
+    ml_fake_prob = ml_model.predict_proba(input_df)[0][1]
 
     # ---------- BERT ----------
-    bert_prob = bert_predict(
+    bert_fake_prob = bert_predict(
         bert_model,
         bert_tokenizer,
         full_text
     )
 
-    # ---------- Ensemble ----------
-    final_prob = (ml_prob + bert_prob) / 2
+    # ---------- Weighted ensemble (BERT-dominant) ----------
+    final_prob = (0.7 * bert_fake_prob) + (0.3 * ml_fake_prob)
     label = "Fake" if final_prob >= THRESHOLD else "Real"
 
     # ---------- Logging ----------
     log_prediction(
         {
-            "full_text": full_text,
+            "job_title": job.title,
             "telecommuting": job.telecommuting,
             "has_company_logo": job.has_company_logo,
             "has_questions": job.has_questions,
-            "ml_prob": round(float(ml_prob), 3),
-            "bert_prob": round(float(bert_prob), 3),
+            "ml_fake_prob": round(float(ml_fake_prob), 3),
+            "bert_fake_prob": round(float(bert_fake_prob), 3),
         },
         label,
         round(float(final_prob), 3)
@@ -90,16 +90,14 @@ def predict(job: JobPostRequest):
 
     return PredictionResponse(
         label=label,
-        ml_confidence=round(float(ml_prob), 3),
-        bert_confidence=round(float(bert_prob), 3),
-        ensemble_confidence=round(float(final_prob), 3)
+        fake_confidence_score=round(float(final_prob), 3)
     )
 
 
 # ------------------------------------------------
 # LOGGING
 # ------------------------------------------------
-def log_prediction(data: dict, label: str, confidence: float):
+def log_prediction(data: dict, label: str, fake_confidence_score: float):
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
     file_exists = os.path.exists(LOG_FILE)
 
@@ -109,24 +107,24 @@ def log_prediction(data: dict, label: str, confidence: float):
         if not file_exists:
             writer.writerow([
                 "timestamp",
-                "full_text",
+                "job_title",
                 "telecommuting",
                 "has_company_logo",
                 "has_questions",
-                "ml_prob",
-                "bert_prob",
+                "ml_fake_prob",
+                "bert_fake_prob",
                 "final_label",
-                "confidence"
+                "fake_confidence_score"
             ])
 
         writer.writerow([
             datetime.utcnow().isoformat(),
-            data["full_text"],
+            data["job_title"],
             data["telecommuting"],
             data["has_company_logo"],
             data["has_questions"],
-            data["ml_prob"],
-            data["bert_prob"],
+            data["ml_fake_prob"],
+            data["bert_fake_prob"],
             label,
-            confidence
+            fake_confidence_score
         ])

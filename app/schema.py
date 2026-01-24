@@ -13,6 +13,4 @@ class JobPostRequest(BaseModel):
 
 class PredictionResponse(BaseModel):
     label: str
-    ml_confidence: float
-    bert_confidence: float
-    ensemble_confidence: float
+    fake_confidence_score: float
