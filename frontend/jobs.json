@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Backend Engineer (Python)",
+    "company_profile": "InnoWave Technologies is a Bangalore-based SaaS company building workflow automation platforms for large enterprises across India and Southeast Asia.",
+    "description": "Responsibilities:\n- Design, develop, and maintain scalable backend services using Python and FastAPI\n- Build and optimize REST APIs consumed by web and mobile clients\n- Work with PostgreSQL and Redis for high-performance data access\n- Participate in architecture discussions and technical design reviews\n- Mentor junior engineers and conduct code reviews\n\nYou will collaborate closely with product managers, frontend engineers, and DevOps teams to deliver reliable and secure services in a fast-paced environment.",
+    "requirements": "5+ years of backend development experience\nStrong proficiency in Python\nExperience with REST APIs, SQL databases, Docker, and cloud platforms (AWS/GCP)\nGood understanding of system design and microservices",
+    "benefits": "Health insurance, ESOPs, annual performance bonus, hybrid work model.",
+    "telecommuting": 1,
+    "has_company_logo": 1,
+    "has_questions": 1
+  },
+  {
+    "id": 2,
+    "title": "Digital Marketing Manager",
+    "company_profile": "UrbanNest Interiors is a mid-sized interior design and renovation firm operating in five metro cities in India.",
+    "description": "Key Responsibilities:\n- Plan and execute digital campaigns across Google Ads, Meta Ads, and SEO\n- Manage agency partners and freelancers\n- Track campaign KPIs, CAC, ROAS, and lead quality\n- Optimize landing pages and lead funnels\n- Collaborate with creative teams for content and creatives\n\nThis role requires a balance of creativity, analytical thinking, and hands-on campaign execution.",
+    "requirements": "3-6 years experience in digital marketing\nHands-on experience with paid ads and analytics tools\nStrong communication and reporting skills",
+    "benefits": "Performance incentives, hybrid work, learning and development budget.",
+    "telecommuting": 1,
+    "has_company_logo": 1,
+    "has_questions": 0
+  },
+  {
+    "id": 3,
+    "title": "Junior Data Analyst",
+    "company_profile": "FinEdge Analytics provides data-driven insights and reporting solutions to fintech startups and NBFCs across India.",
+    "description": "As a Junior Data Analyst, you will:\n- Clean and analyze transactional datasets\n- Build dashboards and MIS reports\n- Support senior analysts in ad-hoc analysis\n- Work closely with business stakeholders to understand reporting needs\n\nThis is an entry-level role with strong learning and growth opportunities.",
+    "requirements": "Strong Excel and SQL skills\nBasic Python preferred\nUnderstanding of statistics",
+    "benefits": "Medical insurance, learning allowance, on-site role.",
+    "telecommuting": 0,
+    "has_company_logo": 1,
+    "has_questions": 1
+  },
+  {
+    "id": 4,
+    "title": "Remote Data Entry Specialist",
+    "company_profile": "SkyBridge Global Solutions claims to provide outsourced remote services. No verified address, registration number, or leadership details are publicly available.",
+    "description": "Job Description:\nWe are urgently hiring multiple remote data entry specialists.\n\nYour responsibilities include:\n- Entering invoice details into spreadsheets\n- Sending pre-written emails to assigned contacts\n- Updating simple records as instructed\n\nNo prior experience is required. Training will be provided immediately after joining.\nWeekly payouts will be credited directly to your bank account.\n\nInterested candidates should contact our HR team via WhatsApp or Telegram to start immediately.",
+    "requirements": "Basic typing skills\nAttention to detail\nAbility to follow instructions via messaging apps",
+    "benefits": "Work from home, flexible hours, instant joining, performance bonuses.",
+    "telecommuting": 1,
+    "has_company_logo": 0,
+    "has_questions": 0
+  },
+  {
+    "id": 5,
+    "title": "Online Survey & Review Assistant",
+    "company_profile": "BrightFuture Careers promotes online earning opportunities. Company registration and leadership information is not clearly disclosed.",
+    "description": "Earn money by completing online surveys, app reviews, and feedback tasks.\n\nHighlights:\n- No interviews or background checks\n- Daily earning opportunities\n- Training provided immediately after registration\n\nThis opportunity is ideal for students, homemakers, and part-time earners looking to make quick income online.",
+    "requirements": "Smartphone or laptop\nInternet connection",
+    "benefits": "Daily payouts, no interviews, work anytime.",
+    "telecommuting": 1,
+    "has_company_logo": 0,
+    "has_questions": 0
+  },
+  {
+    "id": 6,
+    "title": "Part-Time Email Processing Executive",
+    "company_profile": "WorkEase Consulting claims to offer global remote job opportunities but lacks verifiable company credentials.",
+    "description": "Job Responsibilities:\n- Process and forward emails as per instructions\n- Follow simple operational guidelines\n\nNo technical skills are required.\nLimited slots available.\nCandidates are requested to directly message our HR team on Telegram for quick onboarding.",
+    "requirements": "Basic English reading skills",
+    "benefits": "Weekly payments, flexible timing, no experience needed.",
+    "telecommuting": 1,
+    "has_company_logo": 0,
+    "has_questions": 0
+  }
+]

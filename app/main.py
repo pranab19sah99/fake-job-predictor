@@ -19,6 +19,16 @@ from app.bert_utils import (
 # ------------------------------------------------
 app = FastAPI(title="Fake Job Detection API")
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 # ------------------------------------------------
 # LOAD MODELS (ONCE)
 # ------------------------------------------------
@@ -87,7 +97,9 @@ def predict(job: JobPostRequest):
         label,
         round(float(final_prob), 3)
     )
+    import time
 
+    time.sleep(5)  # sleeps for 5 seconds
     return PredictionResponse(
         label=label,
         fake_confidence_score=round(float(final_prob), 3)

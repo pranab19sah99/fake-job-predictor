@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fake Job Detector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .job-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .job-card h3 {
+      margin-top: 0;
+    }
+
+    .predict-btn {
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .result.real {
+      color: green;
+    }
+
+    .result.fake {
+      color: red;
+    }
+
+    .confidence-bar-container {
+      margin-top: 6px;
+      height: 10px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .confidence-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .tooltip {
+      font-size: 12px;
+      color: #333;
+      background: #eee;
+      padding: 6px;
+      border-radius: 4px;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .spinner {
+      display: none;
+      margin-top: 8px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .error {
+      margin-top: 8px;
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Fake Job Post Detection</h1>
+
+<div class="note">
+  <h3>Jobs shown below are fetched from publicly available job portals and sample datasets for academic demonstration.</h3>
+</div>
+
+<div class="controls">
+  <button onclick="loadJobs()">Fetch Jobs</button>
+  <button onclick="resetUI()">Reset</button>
+</div>
+
+<div class="jobs" id="jobs"></div>
+
+<script>
+let jobsData = [];
+
+async function loadJobs() {
+  const res = await fetch("jobs.json");
+  jobsData = await res.json();
+
+  const container = document.getElementById("jobs");
+  container.innerHTML = "";
+
+  jobsData.forEach(job => {
+    container.innerHTML += `
+      <div class="job-card">
+        <h3>${job.title}</h3>
+        <p><b>Company:</b> ${job.company_profile}</p>
+        <p>${job.description}</p>
+
+        <button class="predict-btn" onclick='predict(${JSON.stringify(job)})'>
+          Predict
+        </button>
+
+        <div class="spinner" id="spinner-${job.id}">
+          Predicting...
+        </div>
+
+        <div class="result" id="result-${job.id}"></div>
+
+        <div class="confidence-bar-container">
+          <div class="confidence-bar" id="bar-${job.id}"></div>
+        </div>
+
+        <div class="tooltip" id="tooltip-${job.id}"></div>
+
+        <div class="error" id="error-${job.id}"></div>
+      </div>
+    `;
+  });
+}
+
+function resetUI() {
+  document.getElementById("jobs").innerHTML = "";
+}
+
+async function predict(job) {
+  const spinner = document.getElementById(`spinner-${job.id}`);
+  const resultEl = document.getElementById(`result-${job.id}`);
+  const barEl = document.getElementById(`bar-${job.id}`);
+  const tooltipEl = document.getElementById(`tooltip-${job.id}`);
+  const errorEl = document.getElementById(`error-${job.id}`);
+
+  spinner.style.display = "block";
+  resultEl.innerText = "";
+  tooltipEl.style.display = "none";
+  errorEl.innerText = "";
+  barEl.style.width = "0%";
+
+  try {
+    const res = await fetch("http://127.0.0.1:8000/predict", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(job)
+    });
+
+    if (!res.ok) {
+      throw new Error("API error");
+    }
+
+    const data = await res.json();
+    console.log("Prediction response:", data);
+
+    const fakeProb = data.fake_confidence_score;
+    const realProb = 1 - fakeProb;
+
+    spinner.style.display = "none";
+
+    if (data.label === "Fake") {
+      resultEl.className = "result fake";
+      resultEl.innerText =
+        `Prediction: FAKE JOB | Fake confidence: ${fakeProb.toFixed(2)}`;
+
+      barEl.style.background = "red";
+      barEl.style.width = Math.round(fakeProb * 100) + "%";
+
+      tooltipEl.innerText =
+        "Flagged due to scam-like language, weak company verification, and missing hiring signals.";
+    } else {
+      resultEl.className = "result real";
+      resultEl.innerText =
+        `Prediction: REAL JOB | Real confidence: ${realProb.toFixed(2)}`;
+
+      barEl.style.background = "green";
+      barEl.style.width = Math.round(realProb * 100) + "%";
+
+      tooltipEl.innerText =
+        "Professional tone, structured responsibilities, and legitimate company signals detected.";
+    }
+
+    tooltipEl.style.display = "block";
+
+  } catch (err) {
+    spinner.style.display = "none";
+    errorEl.innerText =
+      "Prediction service is unavailable. Please ensure the API is running.";
+  }
+}
+</script>
+
+</body>
+</html>
