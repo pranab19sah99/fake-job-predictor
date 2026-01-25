@@ -1,2 +1,47 @@
 timestamp,job_title,telecommuting,has_company_logo,has_questions,ml_fake_prob,bert_fake_prob,final_label,fake_confidence_score
 2026-01-24T14:56:16.441348,Senior Backend Engineer,0,1,1,0.028,0.006,Real,0.013
+2026-01-24T18:12:41.493374,Remote Data Entry Specialist,1,0,0,0.969,0.067,Real,0.338
+2026-01-24T18:13:14.787154,Remote Data Entry Specialist,1,0,0,0.969,0.067,Real,0.338
+2026-01-24T18:13:22.507355,Senior Backend Engineer,1,1,1,0.045,0.169,Real,0.132
+2026-01-24T18:46:27.863339,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T18:46:46.876084,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T18:47:03.659543,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T18:47:29.397767,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T18:47:33.843508,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T18:50:22.340278,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T19:07:43.411068,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T19:07:51.068973,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T19:08:17.250095,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:08:20.724149,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-24T19:08:25.605233,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T19:08:30.150911,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T19:09:15.331385,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:09:16.829355,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:09:20.488261,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T19:09:22.364389,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T19:09:25.226180,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T19:09:36.052495,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:09:38.374499,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T19:09:40.491200,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T19:09:43.384035,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-24T19:09:46.683357,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T19:09:49.162948,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T19:20:58.590224,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T19:21:19.698381,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T19:21:24.751476,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T19:21:31.101259,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:21:32.696127,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-24T19:21:34.190568,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T19:21:42.057702,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T19:34:27.996241,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T19:34:38.563886,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-24T19:34:41.792563,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-24T19:34:43.077105,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T19:34:51.080347,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T19:34:52.601426,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T21:17:45.243584,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-24T21:17:46.930172,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-24T21:17:49.590627,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-24T21:18:01.265407,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-24T21:18:02.771321,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-24T21:18:05.489458,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
