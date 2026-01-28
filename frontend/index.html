@@ -33,7 +33,7 @@
 
     .jobs {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 16px;
     }
 
@@ -120,7 +120,10 @@
 
 <div class="jobs" id="jobs"></div>
 
+<script src="config.js"></script>
+
 <script>
+const API_BASE_URL = window.API_BASE_URL || "/api";
 let jobsData = [];
 
 async function loadJobs() {
@@ -130,7 +133,9 @@ async function loadJobs() {
   const container = document.getElementById("jobs");
   container.innerHTML = "";
 
-  jobsData.forEach(job => {
+  jobsData.forEach((job, index) => {
+    job.id = index + 1; // assign unique ID
+
     container.innerHTML += `
       <div class="job-card">
         <h3>${job.title}</h3>
@@ -141,10 +146,7 @@ async function loadJobs() {
           Predict
         </button>
 
-        <div class="spinner" id="spinner-${job.id}">
-          Predicting...
-        </div>
-
+        <div class="spinner" id="spinner-${job.id}">Predicting...</div>
         <div class="result" id="result-${job.id}"></div>
 
         <div class="confidence-bar-container">
@@ -177,7 +179,7 @@ async function predict(job) {
   barEl.style.width = "0%";
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/predict", {
+    const res = await fetch(`${API_BASE_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(job)

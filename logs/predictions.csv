@@ -45,3 +45,11 @@ timestamp,job_title,telecommuting,has_company_logo,has_questions,ml_fake_prob,be
 2026-01-24T21:18:01.265407,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
 2026-01-24T21:18:02.771321,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
 2026-01-24T21:18:05.489458,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-28T07:16:30.845274,Digital Marketing Manager,1,1,0,0.03,0.001,Real,0.01
+2026-01-28T07:16:43.294525,Remote Data Entry Specialist,1,0,0,0.863,0.059,Real,0.3
+2026-01-28T07:16:46.317668,Part-Time Email Processing Executive,1,0,0,0.723,0.68,Fake,0.693
+2026-01-28T07:16:54.711489,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
+2026-01-28T07:17:11.209334,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-28T07:17:27.232396,Senior Backend Engineer (Python),1,1,1,0.037,0.004,Real,0.014
+2026-01-28T07:19:06.152889,Junior Data Analyst,0,1,1,0.042,0.002,Real,0.014
+2026-01-28T07:19:08.073199,Online Survey & Review Assistant,1,0,0,0.936,0.384,Fake,0.549
