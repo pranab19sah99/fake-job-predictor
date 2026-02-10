@@ -1,0 +1,30 @@
+name: Model Retraining
+
+on:
+  workflow_dispatch:
+    inputs:
+      model_version:
+        description: "Model version label (example: v2, v3)"
+        required: true
+        default: "v2"
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Execute training pipeline
+        env:
+          MODEL_VERSION: ${{ github.event.inputs.model_version }}
+        run: python training/train_all.py
