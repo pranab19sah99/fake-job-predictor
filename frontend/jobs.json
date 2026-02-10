@@ -64,5 +64,27 @@
     "telecommuting": 1,
     "has_company_logo": 0,
     "has_questions": 0
+  },
+  {
+    "id": 7,
+    "title": "Product Manager - SaaS",
+    "company_profile": "CloudTrack Systems is a Bangalore-based startup building cloud-native solutions for logistics and supply chain management across India and ASEAN.",
+    "description": "Key Responsibilities:\n- Define product vision, strategy, and roadmap\n- Work closely with engineering, design, and marketing teams to deliver high-quality products\n- Analyze market trends, customer feedback, and KPIs to make data-driven decisions\n- Lead backlog prioritization and sprint planning sessions\n- Serve as the primary liaison between stakeholders and the development team",
+    "requirements": "5+ years of product management experience, preferably in SaaS\nStrong understanding of Agile/Scrum methodologies\nExcellent communication, stakeholder management, and analytical skills\nExperience with data analytics tools (Mixpanel, Amplitude) is a plus",
+    "benefits": "Competitive salary, ESOPs, health insurance, remote-first policy, learning and mentorship programs.",
+    "telecommuting": 1,
+    "has_company_logo": 1,
+    "has_questions": 1
+  },
+  {
+    "id": 8,
+    "title": "Data Scientist (Machine Learning)",
+    "company_profile": "Neurolytics AI is a Pune-based AI startup specializing in predictive analytics and recommendation engines for e-commerce and retail clients.",
+    "description": "Responsibilities:\n- Develop and deploy machine learning models for recommendation systems, churn prediction, and forecasting\n- Conduct exploratory data analysis and feature engineering\n- Collaborate with software engineers to integrate models into production pipelines\n- Monitor and optimize model performance and scalability\n- Stay updated with the latest trends in ML/AI research and tools",
+    "requirements": "3+ years experience in data science or machine learning\nProficiency in Python, scikit-learn, TensorFlow/PyTorch\nStrong knowledge of statistics, probability, and data preprocessing\nExperience with SQL and cloud platforms (AWS/GCP) is preferred",
+    "benefits": "Health coverage, ESOPs, flexible work hours, learning budget, team offsites and hackathons.",
+    "telecommuting": 1,
+    "has_company_logo": 1,
+    "has_questions": 0
   }
 ]

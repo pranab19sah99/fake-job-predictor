@@ -10,6 +10,7 @@ services:
       - "8000:8000"
     volumes:
       - ./logs:/app/logs
+      - ./artifacts:/app/artifacts   # live updates for artifacts
     restart: unless-stopped
 
   frontend:
@@ -19,6 +20,8 @@ services:
     container_name: fake_job_ui
     ports:
       - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html  # live updates for frontend files including jobs.json
     depends_on:
       - api
     restart: unless-stopped
