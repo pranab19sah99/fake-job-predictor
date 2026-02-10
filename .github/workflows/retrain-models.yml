@@ -1,16 +1,27 @@
-name: Model Retraining
+name: Model Retraining Pipeline
 
 on:
+  # Manual trigger from GitHub UI
   workflow_dispatch:
     inputs:
       model_version:
-        description: "Model version label (example: v2, v3)"
+        description: "Model version label (example: v2, v3, 2026-jan)"
         required: true
         default: "v2"
+
+  # Auto trigger when pushing to bits branch
+  push:
+    branches:
+      - bits
 
 jobs:
   retrain:
     runs-on: ubuntu-latest
+
+    # If manual -> use provided version
+    # If push -> auto-generate version using run number
+    env:
+      MODEL_VERSION: ${{ github.event.inputs.model_version || format('bits-build-{0}', github.run_number) }}
 
     steps:
       - name: Checkout repository
@@ -22,9 +33,10 @@ jobs:
           python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
-      - name: Execute training pipeline
-        env:
-          MODEL_VERSION: ${{ github.event.inputs.model_version }}
-        run: python training/train_all.py
+      - name: Start training job
+        run: |
+          echo "Model version: $MODEL_VERSION"
+          python training/train_all.py
